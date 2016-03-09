@@ -1,0 +1,73 @@
+@mixin font-face($name,$location,$weight){
+    @font-face {
+        font-family: $name;
+        src: url($location + '.eot');
+        src: url($location + '.eot?#iefix') format('embedded-opentype'),
+             url($location + '.woff') format('woff'),
+             url($location + '.ttf') format('truetype'),
+             url($location + '.svg#'+ $name) format('svg');
+        font-weight: $weight;
+        font-style: normal;
+    }
+}
+
+
+@mixin woff-face($name,$location,$weight){
+    @font-face {
+        font-family: $name;
+        src: url($location + '.woff') format('woff');
+        font-weight: $weight;
+        font-style: normal;
+    }
+}
+
+
+
+@include woff-face('gothamNarrow', '../media/fonts/gotham-narrow-ssm-400', 400);
+@include woff-face('gothamNarrow', '../media/fonts/gotham-narrow-500', 500);
+@include woff-face('gothamNarrow', '../media/fonts/gotham-narrow-700', 600);
+@include woff-face('gothamNarrow', '../media/fonts/gotham-narrow-ssm-700', 700);
+
+@include woff-face('fell', '../media/fonts/imfell', 700);
+
+
+@include font-face('amtestone', '../media/fonts/AMTESTONE', normal);
+
+body{
+    font-family: 'gothamNarrow';
+    -webkit-font-smoothing:antialiased;
+}
+
+
+%gbook{
+    font-family: 'gothamNarrow', 'helvetica', 'arial', "Times New Roman", serif;
+    font-weight: 400;
+}
+
+
+%gmed{
+    font-family: 'gothamNarrow', 'helvetica', 'arial', "Times New Roman", serif;
+    font-weight: 500;
+}
+
+
+%gbold{
+    font-family: 'gothamNarrow', 'helvetica', 'arial', "Times New Roman", serif;
+    font-weight: 600;
+}
+
+%gblack{
+    font-family: 'gothamNarrow', 'helvetica', 'arial', "Times New Roman", serif;
+    font-weight: 700;
+}
+
+%am{
+    font-family: 'amtestone', 'helvetica', 'arial', "Times New Roman", serif;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+%fell{
+    font-family: 'fell', 'helvetica', 'arial', "Times New Roman", serif;
+    font-weight: normal;
+}

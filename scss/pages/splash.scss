@@ -1,0 +1,153 @@
+.splash {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: url("../media/images/splash.jpg") no-repeat center center;
+    background-size: cover;
+    transition: transform 0.8s cubic-bezier(0.645, 0, 0.475, 1);
+
+    &.hide {
+        transform: translate3d(0, -1050px, 0);
+    }
+
+    &.remove {
+        display: none;
+    }
+
+    .one {
+        transition: opacity 0.5s;
+
+        .content {
+            width: 100%;
+            padding-top: 100px;
+            top: 50%;
+            position: absolute;
+            text-align: center;
+            transform: translateY(-50%);
+
+            .title {
+                @extend %am;
+
+                font-size: 120px;
+                text-transform: uppercase;
+            }
+
+            .living {
+                font-size: 20px;
+                line-height: 60px;
+                display: inline-block;
+                position: relative;
+                text-transform: uppercase;
+
+                &::before {
+                    content: '';
+                    right: 100%;
+                    margin-right: 30px;
+                    width: 270px;
+                    height: 2px;
+                    top: 29px;
+                    background: white;
+                    position: absolute;
+                }
+
+                &::after {
+                    content: '';
+                    left: 100%;
+                    margin-left: 30px;
+                    width: 270px;
+                    height: 2px;
+                    top: 29px;
+                    background: white;
+                    position: absolute;
+                }
+            }
+        }
+    }
+
+    .touchme {
+        margin: 70px 0;
+        font-size: 30px;
+
+        @extend %gblack;
+    }
+
+    .two {
+        transition: opacity 0.5s;
+        opacity: 0;
+        left: -100%;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+
+        .content {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            text-align: center;
+
+            .copy {
+                font-size: 25px;
+                line-height: 40px;
+                margin: 0 auto;
+                width: 760px;
+                padding: 50px 0;
+                text-align: center;
+            }
+        }
+    }
+
+    .buttons {
+        text-transform: uppercase;
+
+        @extend %gbook;
+
+        position: relative;
+        width: 100%;
+        height: 100px;
+
+        &::after {
+            content: '';
+            width: 2px;
+            margin-left: -1px;
+            height: 54px;
+            background: white;
+            left: 50%;
+            top: 0;
+            position: absolute;
+        }
+
+        .maori {
+            right: 50%;
+            height: 54px;
+            line-height: 54px;
+            text-align: right;
+            margin-right: 25px;
+            position: absolute;
+            font-size: 25px;
+        }
+
+        .eng {
+            left: 50%;
+            height: 54px;
+            line-height: 54px;
+            text-align: left;
+            margin-left: 25px;
+            position: absolute;
+            font-size: 25px;
+        }
+
+        .lang-btn {
+            opacity: 0.5;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}

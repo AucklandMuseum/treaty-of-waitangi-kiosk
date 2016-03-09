@@ -1,0 +1,123 @@
+
+
+// VARS
+
+// $devURL:'http://192.168.2.1/museum/production/dev/media/';
+// $prodURL:'../media/';
+
+
+// $baseURL: $devURL;
+
+
+$green:#00632c;
+
+$green:#008f46;
+
+
+
+// @keyframes flash{
+
+//     0%{
+//         opacity:1;
+//     }
+
+// }
+
+
+// CLASSES
+
+
+
+
+// MIXINS
+
+@mixin clearfix {
+    clear: both;
+
+    &::after {
+        content: '';
+        display: table;
+    }
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin animation-timing-function($ease) {
+    -webkit-animation-timing-function:$ease;
+    -moz-animation-timing-function:$ease;
+    -ms-animation-timing-function:$ease;
+    -o-animation-timing-function:$ease;
+    animation-timing-function:$ease;
+}
+
+@mixin animation($anim) {
+    -webkit-animation: $anim;
+    -moz-animation: $anim;
+    -o-animation: $anim;
+    -ms-animation: $anim;
+    animation: $anim;
+}
+
+@mixin animation-fill-mode($mode) {
+    -webkit-animation-fill-mode: $mode;
+    -moz-animation-fill-mode: $mode;
+    -o-animation-fill-mode: $mode;
+    -ms-animation-fill-mode: $mode;
+    animation-fill-mode: $mode;
+}
+
+@mixin animation-delay($time) {
+    -webkit-animation-delay: $time;
+    -moz-animation-delay: $time;
+    -o-animation-delay: $time;
+    -ms-animation-delay: $time;
+    animation-delay: $time;
+}
+
+@mixin animation-duration($time) {
+    -webkit-animation-duration: $time;
+    -moz-animation-duration: $time;
+    -o-animation-duration: $time;
+    -ms-animation-duration: $time;
+    animation-duration: $time;
+}
+
+@mixin animation-iteration-count($val) {
+    -webkit-animation-iteration-count: $val;
+    -moz-animation-iteration-count: $val;
+    -o-animation-iteration-count: $val;
+    -ms-animation-iteration-count: $val;
+    animation-iteration-count: $val;
+}
+
+@mixin animation-name($name) {
+    -webkit-animation-name: $name;
+    -moz-animation-name: $name;
+    -o-animation-name: $name;
+    -ms-animation-name: $name;
+    animation-name: $name;
+}
+
+@mixin animation-direction($direction) {
+    -webkit-animation-direction: $direction;
+    -moz-animation-direction: $direction;
+    -o-animation-direction: $direction;
+    -ms-animation-direction: $direction;
+    animation-direction: $direction;
+}

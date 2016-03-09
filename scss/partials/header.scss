@@ -1,0 +1,314 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    transform: translateY(0);
+    transition: transform 0.5s;
+
+    .home {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        left: 27px;
+        top: 15px;
+        background: url("../media/images/home-btn.png") center center no-repeat;
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+        transition: background-color 0.5s, width 0.5s;
+
+        .text {
+            line-height: 60px;
+            position: absolute;
+            top: 0;
+            left: 70px;
+
+            @extend %gmed;
+
+            font-size: 20px;
+            width: 200px;
+            transition: opacity 0.5s, transform 0.5s;
+
+            span {
+                display: inline-block;
+                height: 2px;
+                width: 80px;
+                position: relative;
+                top: -5px;
+                background: white;
+                margin: 0 20px;
+            }
+
+            &.menu {
+                width: 600px;
+                left: 40px;
+                opacity: 0;
+            }
+        }
+    }
+
+    .back {
+        opacity: 0;
+        transition: opacity 0.5s, transform 0.5s,top 0s 0.5s;
+        top: -200px;
+        left: 100px;
+        position: absolute;
+        height: 60px;
+        border-left: 3px solid white;
+        line-height: 60px;
+        width: 270px;
+        overflow: hidden;
+
+        .copy-inner {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            transition: transform 0.5s, background-color 0.5s;
+            transform: translateX(-100%);
+
+            @extend %gmed;
+
+            font-size: 20px;
+            padding-left: 60px;
+            background-image: url("../media/images/back-btn.png");
+            background-position: 10px center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            &.treaty {
+                width: 155px;
+            }
+        }
+    }
+
+    &[data-style="splash"] {
+        transform: translateY(-90px);
+
+        .home {
+            background-color: rgba(0, 0, 0, 0);
+
+            .text {
+                width: 600px;
+            }
+        }
+    }
+
+    &[data-style="menu"] {
+        .home {
+            background-color: white;
+            width: 10px;
+
+            .text {
+                opacity: 0;
+
+                &.menu {
+                    top: 0;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &[data-style="video"], &[data-style="treaty-read"], &[data-style="treaty-see"], &[data-style="signing"],  &[data-style="landloss"] {
+        .home {
+            background-color: rgba(0, 0, 0, 0);
+
+            .text {
+                opacity: 0;
+                transition: top 0s 0.5s, opacity 0.5s;
+                top: -100px;
+            }
+        }
+
+        .back {
+            top: 15px;
+            opacity: 1;
+            transition: top 0s 0.5s, opacity 0.5s 0.5s;
+        }
+    }
+
+    &[data-style="video"] {
+        .back {
+            .copy-inner.video {
+                transition: transform 1s 0.7s cubic-bezier(0.38, 1.105, 0.375, 0.995);
+                transform: translateX(15px);
+            }
+        }
+    }
+
+    &[data-style="signing"] {
+        .back {
+            .copy-inner.signing {
+                transition: transform 1s 0.7s cubic-bezier(0.38, 1.105, 0.375, 0.995);
+                transform: translateX(15px);
+            }
+        }
+    }
+
+    &[data-style="landloss"] {
+        .back {
+            .copy-inner.landloss {
+                transition: transform 1s 0.7s cubic-bezier(0.38, 1.105, 0.375, 0.995);
+                transform: translateX(15px);
+            }
+        }
+    }
+
+    &[data-style="treaty-read"], &[data-style="treaty-see"] {
+        .back {
+            .copy-inner.treaty {
+                transition: transform 1s 0.7s cubic-bezier(0.38, 1.105, 0.375, 0.995);
+                transform: translateX(15px);
+                background-color: rgba(0, 0, 0, 1);
+            }
+        }
+    }
+
+    &[data-style="treaty-read"] {
+        .back {
+            .copy-inner.treaty {
+                transition: transform 1s 0.7s cubic-bezier(0.38, 1.105, 0.375, 0.995);
+                transform: translateX(15px);
+                background-color: rgba(0, 0, 0, 0);
+            }
+        }
+    }
+
+    &[data-style="from-video"], &[data-style="from-treaty"], &[data-style="from-signing"], &[data-style="from-landloss"] {
+        .home {
+            .text {
+                opacity: 0;
+                top: -100px;
+            }
+        }
+
+        .back {
+            top: 15px;
+            opacity: 0;
+            transition: top 0s 0.5s, opacity 0.5s;
+
+            .copy-inner {
+                transition: transform 0.5s cubic-bezier(0.685, 0.06, 0.905, 0.385), background-color 0.5s;
+                transform: translateX(-100%);
+            }
+        }
+    }
+
+    &[data-style="treaty-see"] {
+        .home {
+            background-color: rgba(0, 0, 0, 1);
+        }
+    }
+
+    &[data-style="treaty-read"], &[data-style="treaty-see"] {
+        .language-select {
+            transform: translateY(-100px);
+        }
+
+        .treaty-btn {
+            transform: translateX(0);
+        }
+    }
+
+    &[data-style="treaty-read"] .treaty-btn .inner .read {
+        opacity: 1;
+    }
+
+    &[data-style="treaty-see"] .treaty-btn .inner .see {
+        opacity: 1;
+    }
+
+    .treaty-btn {
+        transition: transform 0.5s;
+        transform: translateX(250px);
+        position: absolute;
+        right: 25px;
+        top: 15px;
+        width: 220px;
+        height: 60px;
+        background: black;
+        box-sizing: border-box;
+        text-align: center;
+        border-right: 10px solid $green;
+
+        .inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            span {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                line-height: 60px;
+
+                @extend %gblack;
+
+                transition: opacity 0.5s;
+                opacity: 0;
+            }
+        }
+    }
+
+    .language-select {
+        right: 27px;
+        top: 0;
+        position: absolute;
+        transition: transform 0.5s;
+
+        .language {
+            width: 145px;
+            height: 60px;
+            top: 15px;
+            position: absolute;
+
+            &.maori {
+                right: 155px;
+                text-align: center;
+                line-height: 60px;
+
+                @extend %gblack;
+
+                font-size: 20px;
+            }
+
+            &.eng {
+                right: 0px;
+                text-align: center;
+                line-height: 60px;
+
+                @extend %gblack;
+
+                font-size: 20px;
+            }
+        }
+    }
+
+    [data-language="maori"] & {
+        .language-select {
+            .language {
+                &.maori {
+                    background: white;
+                    color: $green;
+                }
+            }
+        }
+    }
+
+    [data-language="eng"] & {
+        .language-select {
+            .language {
+                &.eng {
+                    background: white;
+                    color: $green;
+                }
+            }
+        }
+    }
+}

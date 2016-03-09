@@ -1,0 +1,128 @@
+.treaty-splash {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: url("../media/images/main-bg.png");
+    opacity: 0;
+    z-index: 10;
+    transition: transform 0.8s cubic-bezier(0.645, 0, 0.475, 1), opacity 1s;
+
+    .heading {
+        width: 100%;
+        top: 220px;
+        position: absolute;
+
+        @extend %am;
+
+        font-size: 150px;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+
+        span {
+            letter-spacing: -18px;
+        }
+    }
+
+    .copy {
+        width: 860px;
+        position: absolute;
+        left: 50%;
+        margin-left: -430px;
+        top: 400px;
+
+        p {
+            font-size: 20px;
+            line-height: 30px;
+
+            @extend %gbook;
+
+            text-align: center;
+            color: white;
+        }
+
+        .buttons {
+            position: relative;
+            width: 710px;
+            margin: 40px auto;
+
+            .button {
+                &.left {
+                    left: 0;
+                }
+
+                position: absolute;
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+
+    .button {
+        width: 290px;
+        height: 80px;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding-left: 10px;
+        border: 2px solid white;
+
+        &::before {
+            content: '';
+            width: 100%;
+            position: absolute;
+            left: 0;
+            height: 100%;
+            top: -100%;
+            background: white;
+            opacity: 1;
+            z-index: 2;
+            transition: top 0s 0.3s, opacity 1s 0.3s;
+        }
+
+        &::after {
+            content: '';
+            width: 100%;
+            position: absolute;
+            left: 0;
+            height: 100%;
+            top: 0;
+            transform: translateX(-270px);
+            background: $green;
+            transition: transform 0.4s cubic-bezier(0.68, 0.015, 0.435, 1);
+        }
+
+        .inner {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            color: white;
+            line-height: 80px;
+            font-size: 30px;
+
+            @extend %gmed;
+
+            text-align: center;
+            transition: color 0.4s;
+        }
+
+        &.active {
+            &::after {
+                transform: translateX(0px);
+            }
+
+            &::before {
+                top: 0;
+                opacity: 0;
+            }
+
+            .inner {
+                color: white;
+            }
+        }
+    }
+}

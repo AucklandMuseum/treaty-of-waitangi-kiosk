@@ -1,0 +1,26 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bourbon": "^4.2.6",
+    "grunt": "^0.4.5",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-requirejs": "^0.4.4",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-rsync": "^0.6.2",
+    "grunt-sass": "^1.1.0",
+    "grunt-text-replace": "^0.4.0",
+    "node-sass": "^3.4.2",
+    "sass-dev-server": "^0.1.6"
+  }
+}

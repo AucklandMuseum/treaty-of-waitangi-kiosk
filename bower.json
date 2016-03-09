@@ -1,0 +1,23 @@
+{
+  "name": "grunt",
+  "version": "0.0.0",
+  "directory": "bower",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "compass-breakpoint": "2.0.6",
+    "jquery": "1.10",
+    "modernizr": "~2.8.2",
+    "requirejs": "~2.1.14",
+    "sassy-maps": "<1.0.0"
+  },
+  "devDependencies": {
+    "compass-breakpoint": "breakpoint-sass#~2.6.1"
+  }
+}
