@@ -2,7 +2,7 @@
 
 The Treaty of Waitangi exhibit, situated in the Māori Court, provides an insight into the history of the Treaty from multiple perspectives. It touches on the ongoing Treaty of Waitangi Settlement Process including the work of the Waitangi Tribunal.
  
-The onsite exhibit is supported by an in-gallery (this package) and online digital story, which brings contemporary voices and personal stories to life, and highlighs differing perspectives relating to the Treaty with a focus on iwi from Tāmaki Makaurau. Perspectives from the Treaty partners are all considered.
+The onsite exhibit is supported by an in-gallery (this package) and online digital story, which brings contemporary voices and personal stories to life, and highlights differing perspectives relating to the Treaty with a focus on iwi from Tāmaki Makaurau. Perspectives from the Treaty partners are all considered.
  
 Visitors can see a copy of the Treaty document, and read text versions, including  Professor Sir Hugh Kawharu’s English translation of the Māori text.
  
